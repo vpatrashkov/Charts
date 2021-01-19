@@ -43,7 +43,7 @@ open class LineRadarChartDataSet: LineScatterCandleRadarChartDataSet, LineRadarC
     
     private var _lineWidth = CGFloat(1.0)
     
-    /// line width of the chart (min = 0.0, max = 10)
+    /// line width of the chart (min = 0.0, max = 30)
     ///
     /// **default**: 1
     open var lineWidth: CGFloat
@@ -54,7 +54,7 @@ open class LineRadarChartDataSet: LineScatterCandleRadarChartDataSet, LineRadarC
         }
         set
         {
-            _lineWidth = newValue.clamped(to: 0...10)
+            _lineWidth = newValue.clamped(to: 0...30)
         }
     }
     
