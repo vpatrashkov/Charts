@@ -19,6 +19,9 @@ public protocol AxisRenderer: Renderer {
 
     /// base axis this axis renderer works with
     var axis: Axis { get }
+    
+    //Interval
+    var spaceInterval: Double { get }
 
     /// transformer to transform values to screen pixels and return
     var transformer: Transformer? { get }

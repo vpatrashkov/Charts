@@ -19,7 +19,8 @@ open class YAxisRenderer: NSObject, AxisRenderer
     public let viewPortHandler: ViewPortHandler
     public let axis: YAxis
     public let transformer: Transformer?
-
+    public var spaceInterval: Double = 0.0
+    
     @objc public init(viewPortHandler: ViewPortHandler, axis: YAxis, transformer: Transformer?)
     {
         self.viewPortHandler = viewPortHandler
@@ -390,7 +391,9 @@ open class YAxisRenderer: NSObject, AxisRenderer
             // Use one order of magnitude higher, to avoid intervals like 0.9 or 90
             interval = floor(10.0 * Double(intervalMagnitude))
         }
-
+        
+        spaceInterval = interval
+        
         var n = axis.centerAxisLabelsEnabled ? 1 : 0
 
         // force label count
